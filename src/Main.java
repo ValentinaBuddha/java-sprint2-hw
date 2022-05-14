@@ -1,19 +1,21 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        MonthlyReport monthlyReport = new MonthlyReport();
+        MonthlyReportService monthlyReportService = new MonthlyReportService();
+        YearlyReportService yearlyReportService = new YearlyReportService();
 
         while (true) {
             printMenu();
             int userInput = scanner.nextInt();
             switch (userInput) {
                 case 1:
-                    monthlyReport.reader();
+                    monthlyReportService.readMonthlyFiles();
                     break;
                 case 2:
-                    System.out.println("2 - Считать годовой отчёт");
+                    yearlyReportService.readYearlyFile();
                     break;
                 case 3:
                     System.out.println("3 - Сверить отчёты");

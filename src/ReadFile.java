@@ -3,6 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ReadFile {
+
     static String readFileContentOrNull(String path) {
         try {
             return Files.readString(Path.of(path));
@@ -11,4 +12,6 @@ public class ReadFile {
             return null;
         }
     }
+
+
 }
