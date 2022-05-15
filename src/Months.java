@@ -5,10 +5,12 @@ public class Months {
 
     Months () {
         months = new HashMap<>();
-        months.put(1, "Январь");
-        months.put(2, "Февраль");
-        months.put(3, "Март");
+        months.put(01, "Январь");
+        months.put(02, "Февраль");
+        months.put(03, "Март");
     }
 
-
+    public HashMap<Integer, String> getMonths() {
+        return months;
+    }
 }

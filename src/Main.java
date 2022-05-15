@@ -6,10 +6,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MonthlyReportService monthlyReportService = new MonthlyReportService();
         YearlyReportService yearlyReportService = new YearlyReportService();
+        int userInput = 0;
 
-        while (true) {
+        while (userInput != 666) {
             printMenu();
-            int userInput = scanner.nextInt();
+            userInput = scanner.nextInt();
             switch (userInput) {
                 case 1:
                     monthlyReportService.readMonthlyFiles();
@@ -18,13 +19,13 @@ public class Main {
                     yearlyReportService.readYearlyFile();
                     break;
                 case 3:
-                    System.out.println("3 - Сверить отчёты");
+
                     break;
                 case 4:
                     System.out.println("4 - Вывести информацию о всех месячных отчётах");
                     break;
                 case 5:
-                    System.out.println("5 - Вывести информацию о годовом отчёте");
+                    yearlyReportService.yearlyReportInfo();
                     break;
                 case 666:
                     System.out.println("Выход");
