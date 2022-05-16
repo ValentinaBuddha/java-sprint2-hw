@@ -3,8 +3,8 @@ import java.util.HashMap;
 
 public class YearlyReportService {
     ReadFile readFile = new ReadFile();
-    HashMap<Integer, Double> yearlyReportExpense = new HashMap<>();
     HashMap<Integer, Double> yearlyReportRevenue = new HashMap<>();
+    HashMap<Integer, Double> yearlyReportExpense = new HashMap<>();
     double commonYearRevenue = 0;
     double commonYearExpense = 0;
     boolean yearlyReportIsRead = false;
@@ -33,13 +33,14 @@ public class YearlyReportService {
             String[] s1 = yearPath.split(".csv");
             char[] year = new char[4];
             s1[0].getChars(s1[0].length() - 4, s1[0].length(), year, 0);
-            System.out.println("Данные за год: " + String.valueOf(year) + "\n---------------------------------");
-            System.out.println("Прибыль за " + months.getMonths().get(01) + ":");
-            System.out.println(yearlyReportRevenue.get(01) - yearlyReportExpense.get(01));
-            System.out.println("Прибыль за " + months.getMonths().get(02) + ":");
-            System.out.println(yearlyReportRevenue.get(02) - yearlyReportExpense.get(02));
-            System.out.println("Прибыль за " + months.getMonths().get(03) + ":");
-            System.out.println(yearlyReportRevenue.get(03) - yearlyReportExpense.get(03));
+            System.out.println("Данные за год: " + String.valueOf(year));
+            System.out.println("---------------------------------");
+            System.out.println("Прибыль за " + months.getMonths().get(1) + ":");
+            System.out.println(yearlyReportRevenue.get(1) - yearlyReportExpense.get(1));
+            System.out.println("Прибыль за " + months.getMonths().get(2) + ":");
+            System.out.println(yearlyReportRevenue.get(2) - yearlyReportExpense.get(2));
+            System.out.println("Прибыль за " + months.getMonths().get(3) + ":");
+            System.out.println(yearlyReportRevenue.get(3) - yearlyReportExpense.get(3));
             for (Double revenue : yearlyReportRevenue.values()) {
                 commonYearRevenue += revenue;
             }

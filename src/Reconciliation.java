@@ -1,18 +1,19 @@
 public class Reconciliation {
     MonthlyReportService monthlyReportService = new MonthlyReportService();
     YearlyReportService yearlyReportService = new YearlyReportService();
+    Months months = new Months();
 
-   void reconciliation () {
-       if (monthlyReportService.monthlyReportIsRead && yearlyReportService.yearlyReportIsRead) {
-         /*
-    общие доходы и расходы по месячным отчетам
-    сравнить с годовыми цифрами.
-    Если будет ошибка в сверке, выводить месяц с несоответствием.
-    Если ошибок нет, то пишем успех.
-
-     */
-       } else {
-           System.out.println("Считайте месячные и годовой отчёты.");
-       }
-   }
+    void reconciliation() {
+        if (monthlyReportService.monthlyReportsIsRead && yearlyReportService.yearlyReportIsRead) {
+            for (int i = 0; i < months.getMonths().size(); i++) {
+                if (monthlyReportService.monthRevenues.get(i) == yearlyReportService.yearlyReportRevenue.get(i)) {
+                    System.out.println("Сверка годового и месячных отчётов прошла успешно.");
+                } else {
+                    System.out.println("Обнаружена ошибка. Проверьте отчёты за " + months.getMonths().get(i));
+                }
+            }
+        } else {
+            System.out.println("Считайте месячные и годовой отчёты.");
+        }
+    }
 }

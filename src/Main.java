@@ -22,7 +22,7 @@ public class Main {
 
                     break;
                 case 4:
-                    System.out.println("4 - Вывести информацию о всех месячных отчётах");
+                    monthlyReportService.monthlyReportInfo();
                     break;
                 case 5:
                     yearlyReportService.yearlyReportInfo();
