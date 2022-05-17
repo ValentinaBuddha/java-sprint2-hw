@@ -1,11 +1,9 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        MonthlyReportService monthlyReportService = new MonthlyReportService();
-        YearlyReportService yearlyReportService = new YearlyReportService();
+        ReportService reportService = new ReportService();
         int userInput = 0;
 
         while (userInput != 666) {
@@ -13,19 +11,19 @@ public class Main {
             userInput = scanner.nextInt();
             switch (userInput) {
                 case 1:
-                    monthlyReportService.readMonthlyFiles();
+                    reportService.readMonthlyFiles();
                     break;
                 case 2:
-                    yearlyReportService.readYearlyFile();
+                    reportService.readYearlyFile();
                     break;
                 case 3:
-
+                    reportService.reconciliation();
                     break;
                 case 4:
-                    monthlyReportService.monthlyReportInfo();
+                    reportService.monthlyReportInfo();
                     break;
                 case 5:
-                    yearlyReportService.yearlyReportInfo();
+                    reportService.yearlyReportInfo();
                     break;
                 case 666:
                     System.out.println("Выход");
@@ -36,7 +34,7 @@ public class Main {
         }
     }
 
-    public static void printMenu() {
+    private static void printMenu() {
         System.out.println("Что вы хотите сделать? ");
         System.out.println("1 - Считать все месячные отчёты");
         System.out.println("2 - Считать годовой отчёт");

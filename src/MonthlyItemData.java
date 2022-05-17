@@ -4,7 +4,7 @@ public class MonthlyItemData {
     int quantity;
     double sumOfOne;
 
-    MonthlyItemData (String itemName, boolean isExpense, int quantity, double sumOfOne){
+    public MonthlyItemData (String itemName, boolean isExpense, int quantity, double sumOfOne){
         this.itemName = itemName;
         this.isExpense = isExpense;
         this.quantity = quantity;
