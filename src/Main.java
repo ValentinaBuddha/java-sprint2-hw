@@ -6,7 +6,7 @@ public class Main {
         ReportService reportService = new ReportService();
         int userInput = 0;
 
-        while (userInput != 666) {
+        while (true) {
             printMenu();
             userInput = scanner.nextInt();
             switch (userInput) {
@@ -27,7 +27,7 @@ public class Main {
                     break;
                 case 666:
                     System.out.println("Выход");
-                    break;
+                    return;
                 default:
                     System.out.println("Извините, такой команды пока нет.");
             }
